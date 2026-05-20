@@ -1,0 +1,123 @@
+:root {
+  --color-primary: #4A1FD4;
+  --color-primary-light: #6B3FEF;
+  --color-primary-dark: #3512A6;
+  --color-accent: #7C4DFF;
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F4F4F8;
+  --color-bg-card: #FFFFFF;
+  --color-text: #1A1A2E;
+  --color-text-secondary: #555577;
+  --color-text-muted: #9090A8;
+  --color-border: #E0E0F0;
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+  --color-shadow: rgba(74, 31, 212, 0.12);
+  --color-shadow-md: rgba(74, 31, 212, 0.2);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --font-display: 'Raleway', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --shadow-sm: 0 2px 8px var(--color-shadow);
+  --shadow-md: 0 4px 20px var(--color-shadow);
+  --shadow-lg: 0 8px 40px var(--color-shadow-md);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 480px;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0D0D1A;
+  --color-bg-secondary: #14142B;
+  --color-bg-card: #1A1A32;
+  --color-text: #F0F0FF;
+  --color-text-secondary: #B0B0CC;
+  --color-text-muted: #6060A0;
+  --color-border: #2A2A4A;
+  --color-shadow: rgba(106, 63, 239, 0.2);
+  --color-shadow-md: rgba(106, 63, 239, 0.35);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* Large font mode */
+[data-large-font="true"] {
+  font-size: 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 3px;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

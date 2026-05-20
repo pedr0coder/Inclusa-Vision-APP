@@ -1,0 +1,49 @@
+.mic {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(74, 31, 212, 0.5);
+  z-index: 100;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 3px solid rgba(255,255,255,0.3);
+}
+
+.mic:hover {
+  transform: translateX(-50%) scale(1.08);
+  background: var(--color-primary-light);
+}
+
+.mic:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+.listening {
+  background: var(--color-error);
+  box-shadow: 0 6px 24px rgba(239, 68, 68, 0.5);
+}
+
+.pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--color-error);
+  opacity: 0.4;
+  animation: pulse 1.2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(1.7); opacity: 0; }
+}

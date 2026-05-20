@@ -1,0 +1,186 @@
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 100vh;
+  background: var(--color-bg);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+}
+
+.logoImg {
+  width: 70px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 1px;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.profileBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.profileBtn:hover {
+  color: var(--color-primary);
+  background: var(--color-bg-secondary);
+}
+
+.profileLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.greeting {
+  padding: 0 24px 8px;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.greeting strong {
+  color: var(--color-text);
+}
+
+.main {
+  flex: 1;
+  padding: 8px 20px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  animation: cardIn 0.4s ease both;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.alertDot {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #EF4444;
+  border: 2px solid var(--color-bg-secondary);
+  animation: blink 1.5s ease infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.cardIcon {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardLabel {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text);
+  font-family: var(--font-display);
+}
+
+.cardDesc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.micArea {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.micArea > * {
+  pointer-events: auto;
+}
+
+.watermark {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  color: var(--color-primary);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Desktop layout */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .card {
+    padding: 36px 24px 28px;
+  }
+}
