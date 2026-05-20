@@ -29,7 +29,6 @@ O **Inclusa Vision** é uma plataforma progressiva de mobilidade urbana focada e
 2. No **VS Code**, abra a pasta raiz do projeto.
 3. Abra o terminal e instale as dependências e inicie o servidor:
    ```bash
-   tar -xzf inclusav-project.tar.gz
    cd inclusav
    npm install
    npm run dev     # http://localhost:3000
