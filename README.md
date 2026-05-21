@@ -1,4 +1,4 @@
-# inclusaVision
+# InclusaVision
 Inclusa Vision: Mobilidade urbana acessível com assistente de voz, layout adaptativo e painel de preferências para PCDs. Desenvolvido em React e Tailwind para garantir autonomia e segurança no transporte público com tecnologia inclusiva. 
 
 # Inclusa Vision (InclusaV)
